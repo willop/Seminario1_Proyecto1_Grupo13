@@ -1,0 +1,28 @@
+body{
+    background-image: url('https://inguat.gob.gt/images/fotografias-inguat/DSC_5298_RAW_1.jpg') ;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+p{
+    padding-top: 5%;
+    font: oblique bold 400% cursive;
+}
+
+#div_formulario{
+    margin-left: 37%;
+    padding-top:20px;
+    margin-top: 8%;
+    width: 25%;
+    background: rgb(38,106,168);
+background: linear-gradient(0deg, rgba(38,106,168,0.8743872549019608) 0%, rgba(255,255,255,1) 61%);
+    border-radius:20px;
+}
+
+#iconoo{
+    width:50px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    margin-top:-50px;
+    font-size: 35px;
+}

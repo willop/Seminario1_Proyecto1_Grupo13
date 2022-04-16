@@ -1,0 +1,7 @@
+#carta{
+    box-shadow: 6px 6px;    
+}
+
+#carta:hover{
+    background-color: rgb(223, 219, 219);
+}

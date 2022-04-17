@@ -36,7 +36,7 @@ export default function Home() {
         <div>
             <BarraNavegacion />
             <div id="Head">
-                <center><p>Bienvenido</p>
+                <center><b>Bienvenido</b>
                     <h2>Encuentra nuevos lugares dentro de Guatemala.</h2>
                 </center>
             </div>
@@ -53,8 +53,8 @@ export default function Home() {
                 </div>
             </div>
             <hr size="8px" color="black" />
-            <div id="">
-
+            <div id="footer">
+                    
             </div>
         </div>
     )

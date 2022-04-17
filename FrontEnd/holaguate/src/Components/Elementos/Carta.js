@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Card, Button } from 'react-bootstrap';
-import {  Link } from 'react-router-dom'
-import '../../Style/Carta.css'
+import {  Link } from 'react-router-dom';
+import '../../Style/Carta.css';
 
 const Carta = (props) => {
 
@@ -15,7 +15,7 @@ const Carta = (props) => {
                     <Card.Text>
                         {props.nombre}
                     </Card.Text>
-                    <Button variant="primary" ><Link to={`/prueba/${props.id}`}>Go somewhere</Link></Button>
+                    <Link to={`/prueba/${props.id}`}><Button variant="primary" >Go somewhere</Button></Link>
                 </Card.Body>
             </Card>
             </center>

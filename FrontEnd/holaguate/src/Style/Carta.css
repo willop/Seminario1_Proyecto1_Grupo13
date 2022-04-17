@@ -5,3 +5,13 @@
 #carta:hover{
     background-color: rgb(223, 219, 219);
 }
+
+#Head{
+    padding-top: 50px;
+    font-size: 32px;
+}
+
+Link {
+    color: #FF0000;
+    text-decoration: none;
+}

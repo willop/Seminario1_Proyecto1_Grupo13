@@ -11,9 +11,9 @@ app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 app.use(express.json())
 app.use(cors());
 
-
-
 //ROUTES
+// traducir
+app.use('/',require('./routes/traducir'));
 
 //SERVER LISTENING
 app.listen(app.get('port'), () => {

@@ -12,8 +12,10 @@ app.use(express.json())
 app.use(cors());
 
 //ROUTES
-// traducir
 app.use('/',require('./routes/traducir'));
+app.use('',require('./routes/home'));
+app.use('',require('./routes/perfil'));
+app.use('',require('./routes/lugarTuristico'));
 
 //SERVER LISTENING
 app.listen(app.get('port'), () => {

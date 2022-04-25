@@ -12,6 +12,9 @@ app.use(express.json())
 app.use(cors());
 
 //ROUTES
+app.use('/',require('./routes/login'));
+app.use('/',require('./routes/loginCamara'));
+app.use('/',require('./routes/nuevoUsuario'));
 app.use('/',require('./routes/traducir'));
 app.use('',require('./routes/home'));
 app.use('',require('./routes/perfil'));

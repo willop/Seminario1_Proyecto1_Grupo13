@@ -8,8 +8,8 @@ const Carta = (props) => {
     return (
         <div>
             <center>
-            <Card style={{ width: '80%' ,}} id="carta">
-                <Card.Img variant="top" src="holder.js/100px180" />
+            <Card style={{ width: '90%' ,}} id="carta">
+                <Card.Img variant="top" src={props.image} height="250" />
                 <Card.Body>
                     <Card.Title>{props.nombre}</Card.Title>
                     <Card.Text>

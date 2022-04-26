@@ -8,7 +8,7 @@ export default function User() {
     const { name } = useParams();
     console.log(name)
     return (
-        <div >
+        <div id="Fondo" >
             <BarraNavegacion />
             <div id="image">
                 <center>
@@ -28,9 +28,11 @@ export default function User() {
                         <Form.Label>Password</Form.Label>
                         <Form.Control type="password" placeholder="Password" />
                     </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Submit
-                    </Button>
+                    <center>
+                        <Button variant="primary" type="submit">
+                            Submit
+                        </Button>
+                    </center>
                 </Form>
             </div>
         </div>

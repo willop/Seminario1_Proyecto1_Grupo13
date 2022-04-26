@@ -4,6 +4,8 @@ import Home from '../Components/Home'
 import VisitaLugar from '../Components/VistaLugar'
 import User from '../Components/User'
 import React from 'react';
+import NuevoUsuario from '../Components/NuevoUsuario'
+import LoginCamara from '../Components/LoginCamara'
 
 
 
@@ -16,6 +18,8 @@ export default function AppRoutes() {
             <Route path="/edit" element={<Login/>}></Route>
             <Route path="/prueba/:id" element={<VisitaLugar/>} ></Route>
             <Route path="/user/:name" element={<User/>} ></Route>
+            <Route path="/loginCamara" element={<LoginCamara/>}></Route>
+            <Route path="/crearUsuario" element={<NuevoUsuario/>}></Route>
         </Routes>
     </BrowserRouter>
   )

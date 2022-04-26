@@ -28,7 +28,7 @@ create table proyecto.Lugar(
 	Nombre 	        nvarchar(max),
     Lugar  	        nvarchar(max),
     Foto	        nvarchar(max),
-    Puntuacion	    nvarchar(max),
+    Puntuacion	    int,
     Tipo	        nvarchar(max),
     Descripcion     nvarchar(max)
 );

@@ -21,6 +21,7 @@ app.use('',require('./routes/perfil'));
 app.use('',require('./routes/favoritos'));
 app.use('',require('./routes/agregarFavoritos'));
 app.use('',require('./routes/lugarTuristico'));
+app.use('',require('./routes/chatbot'));
 
 //SERVER LISTENING
 app.listen(app.get('port'), () => {

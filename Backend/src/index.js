@@ -19,6 +19,7 @@ app.use('/',require('./routes/traducir'));
 app.use('',require('./routes/home'));
 app.use('',require('./routes/perfil'));
 app.use('',require('./routes/favoritos'));
+app.use('',require('./routes/agregarFavoritos'));
 app.use('',require('./routes/lugarTuristico'));
 
 //SERVER LISTENING

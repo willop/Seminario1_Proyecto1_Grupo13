@@ -64,7 +64,7 @@ export default function LoginCamara() {
               },
               body: JSON.stringify(datos)
           }
-          let respuesta = await fetch('http://18.208.114.136:5000/EntrarCamara', configuracion)
+          let respuesta = await fetch('http://localhost:5000/loginCamara', configuracion)
           let json = await respuesta.json();
           console.log('valor de la respuesta json')
           console.log(json)

@@ -4,7 +4,7 @@ import {BiLogOut,BiUser} from "react-icons/bi";
 import {  Link } from 'react-router-dom';
 import { Navbar, Container, Nav } from 'react-bootstrap';
 
-export default function BarraNavegacion() {
+export default function BarraNavegacion(props) {
     //const nombre = "Wilfred";
     return (
         <div>
@@ -14,11 +14,11 @@ export default function BarraNavegacion() {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link >Bienvenido</Nav.Link>
+                            <Nav.Link href="/home">Bienvenido</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href={`/user/${"Wilfred"}`} ><BiUser/> User</Nav.Link>
-                            <Nav.Link >Cerrar sesion <BiLogOut/></Nav.Link>
+                            <Nav.Link href={`/user/${"Wilfred"}`} ><BiUser/> {props.user}</Nav.Link>
+                            <Nav.Link href="/" >Cerrar sesion <BiLogOut/></Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

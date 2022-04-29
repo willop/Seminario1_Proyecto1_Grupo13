@@ -15,7 +15,7 @@ const Carta = (props) => {
                     <Card.Text>
                         {props.nombre}
                     </Card.Text>
-                    <Link to={`/prueba/${props.id}`}><Button variant="primary" >Go somewhere</Button></Link>
+                    <Link to={`/prueba/${props.nombre}`}><Button variant="primary" >Go somewhere</Button></Link>
                 </Card.Body>
             </Card>
             </center>

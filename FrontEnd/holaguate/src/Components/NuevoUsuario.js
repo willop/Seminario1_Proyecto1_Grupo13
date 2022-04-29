@@ -9,6 +9,8 @@ export default function NuevoUsuario() {
     const [datos, setDatos] = useState({
         username: '',
         name: '',
+        nacionalidad:'',
+        edad:"",
         password: '',
         password2: '',
         foto: ''
@@ -36,7 +38,6 @@ export default function NuevoUsuario() {
         }else{
             newbase64 = base64.slice(22)
         }
-
         //newbase64 = base64.slice()
         console.log(newbase64)
         //console.log(newbase64)
@@ -49,11 +50,9 @@ export default function NuevoUsuario() {
         return new Promise((resolve, reject) => {
             const fileReader = new FileReader();
             fileReader.readAsDataURL(file);
-
             fileReader.onload = () => {
                 resolve(fileReader.result)
             };
-
             fileReader.onerror = (error) => {
                 reject(error);
             }
@@ -79,12 +78,12 @@ export default function NuevoUsuario() {
                     },
                     body: JSON.stringify(datos)
                 }
-                //let respuesta = await fetch('http://balanceadorpractica1-723187498.us-east-2.elb.amazonaws.com:5000/nuevousuario', configuracion)
-                let respuesta = await fetch('http://18.208.114.136:5000/nuevousuario', configuracion)
+                let respuesta = await fetch('http://localhost:5000/nuevoUsuario', configuracion)
+                //let respuesta = await fetch('http://18.208.114.136:5000/nuevousuario', configuracion)
                 let json = await respuesta.json();
                 //console.log('valor de la respuesta json')
                 //console.log(json)
-                if(json.respuesta == 0){
+                if(json.response == false){
                     await Swal.fire({
                         position: 'top-center',
                         icon: 'error',
@@ -128,6 +127,16 @@ export default function NuevoUsuario() {
                         <Form.Group className="mb-2" >
                             <h4>Nombre Completo</h4>
                             <Form.Control name="name" onChange={handleuserchange} placeholder="Ingrese su nombre completo" />
+                        </Form.Group>
+                        <br />
+                        <Form.Group className="mb-2" >
+                            <h4>Nacionalidad</h4>
+                            <Form.Control type="nacionalidad" onChange={handleuserchange} name="nacionalidad" placeholder="Ingrese su nacionalidad" />
+                        </Form.Group>
+                        <br />
+                        <Form.Group className="mb-2" >
+                            <h4>Edad</h4>
+                            <Form.Control type="edad" onChange={handleuserchange} name="edad" placeholder="Ingrese su edad" />
                         </Form.Group>
                         <br />
                         <Form.Group className="mb-2" >

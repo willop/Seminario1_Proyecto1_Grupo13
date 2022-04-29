@@ -12,3 +12,10 @@
     margin-top:5%;
 }
 
+#Fondoo{
+    width: 1900px;
+    height: 940px;
+    background-image: url('https://blogapi.uber.com/wp-content/uploads/2018/10/Miradores-en-la-Ciudad-de-Guatemala.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}

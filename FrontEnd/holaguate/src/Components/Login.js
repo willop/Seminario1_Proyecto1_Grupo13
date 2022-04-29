@@ -51,10 +51,11 @@ export default function Login() {
             if(resp == true){
               //si es true redirect
               const cookies = new Cookies();
-              cookies.set('cookieIDUsuario',datos.idUsuario,{path:'/'});
+              cookies.set('cookieIDUsuario',datos.username,{path:'/'});
               window.location.href = "/home";
             }
             else{
+                console.log("Datos a enviar: "+datos)
               await Swal.fire({
                 position: 'top-center',
                 icon: 'error',
@@ -88,7 +89,7 @@ export default function Login() {
                         <Form.Control name="password" type="password" placeholder="Contraseña" onChange={handleuserchange}/>
                     </Form.Group>
                     <center>
-                    <Button variant="primary" href='/home'>
+                    <Button variant="primary" onClick={enviarDatos}>
                         Login<BiLogIn/>
                     </Button>
                     <br/>
@@ -102,7 +103,6 @@ export default function Login() {
                 </Form>
                 </h2>
             </div>
-            
         </div>
     )
 }

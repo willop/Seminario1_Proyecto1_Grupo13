@@ -1,11 +1,15 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../Style/Home.css'
 import Carta from './Elementos/Carta'
 import BarraNavegacion from './BarraNavegacion/BarraNavegacion'
+import Cookies from 'universal-cookie'
+import {DropdownButton, Dropdown} from 'react-bootstrap'
 
 
 export default function Home() {
-    const [estadopag, setestadopag]=useState(false)
+
+    const cookies = new Cookies();
+    const [estadopag, setestadopag] = useState(false)
     const [albumes, setalbumes] = useState(
         [
             {
@@ -55,7 +59,8 @@ export default function Home() {
             }
         ]
     )
-
+    const [tiposelect, settiposelect] =useState('Elije una opcion')
+    const [usernamelog, setusername] = useState(cookies.get('cookieIDUsuario'))
 
     useEffect(function () {
         //console.log("Hola al iniciar la app")
@@ -63,13 +68,14 @@ export default function Home() {
             InicioDatos()
             setestadopag(true)
         }
-        else{
+        else {
             setestadopag(true)
         }
     })
 
     const InicioDatos = async (event) => {
         //console.log("dentro de la app")
+        settiposelect("Todos los lugares")
         try {
             let configuracion = {
                 method: 'GET',
@@ -92,17 +98,53 @@ export default function Home() {
         }
     }
 
-    
+    const LugaresFavoritos = async (event) => {
+        console.log("Peticion de favoritos")
+        try {
+            let configuracion = {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ "username": usernamelog })
+            }
+            let respuesta = await fetch('http://localhost:5000/favoritos', configuracion)
+            //let respuesta = await fetch('http://18.208.114.136:5000/home', configuracion)
+            let json = await respuesta.json();
+            console.log('valor de la respuesta json para favoritos')
+            //console.log(json)
+            console.log(json.lugares)
+            setalbumes(json.lugares)
+            //cookies.set('cookienombre',valname,{path: '/'})
+
+        } catch (error) {
+        }
+    }
+
+    const cambiodroptown = async (event) => {
+        settiposelect(event.target.name)
+        console.log(tiposelect)
+    }
+
 
     return (
         <div id="Fondo">
-            <BarraNavegacion />
+            <BarraNavegacion user={usernamelog} />
             <div id="Head">
                 <center><b>Bienvenido</b>
                     <h2>Encuentra nuevos lugares dentro de Guatemala.</h2>
                 </center>
             </div>
             <hr size="10px" color="black" />
+            <div id="combobox">
+                <DropdownButton id="dropdown-basic-button" title={tiposelect} onClick={cambiodroptown}>
+                    <Dropdown.Item onClick={InicioDatos} name="Todos">Todos los lugares</Dropdown.Item>
+                    <Dropdown.Item onClick={LugaresFavoritos} name="Favoritos">Favoritos</Dropdown.Item>
+                </DropdownButton>
+            </div>
+            <hr size="10px" color="black" />
+            <center><h1>{tiposelect}</h1></center>
             <div id="cuerpo">
                 <div id="contenedor" >
                     {albumes.map((varalbum, index) => {
@@ -116,7 +158,6 @@ export default function Home() {
             </div>
             <hr size="8px" color="black" />
             <div id="footer">
-
             </div>
         </div>
     )

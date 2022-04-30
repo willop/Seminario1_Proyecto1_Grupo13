@@ -60,7 +60,7 @@ export default function User() {
             <BarraNavegacion />
             <div id="image">
                 <center>
-                <img src={datos.Foto} id="img"/>
+                <img src={"data:image/png;base64,"+datos.Foto} id="img"/>
                 <br/>
                 <br/>
                 <h1> ID: {datos.ID_usuario}</h1>

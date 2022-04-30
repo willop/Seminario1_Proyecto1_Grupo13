@@ -3,7 +3,7 @@ import '../Style/Home.css'
 import Carta from './Elementos/Carta'
 import BarraNavegacion from './BarraNavegacion/BarraNavegacion'
 import Cookies from 'universal-cookie'
-import {DropdownButton, Dropdown} from 'react-bootstrap'
+import { DropdownButton, OverlayTrigger, Dropdown, Button, Tooltip } from 'react-bootstrap'
 
 
 export default function Home() {
@@ -59,7 +59,7 @@ export default function Home() {
             }
         ]
     )
-    const [tiposelect, settiposelect] =useState('Elije una opcion')
+    const [tiposelect, settiposelect] = useState('Elije una opcion')
     const [usernamelog, setusername] = useState(cookies.get('cookieIDUsuario'))
 
     useEffect(function () {
@@ -127,9 +127,17 @@ export default function Home() {
         console.log(tiposelect)
     }
 
+    const renderTooltip = (props) => (
+        <Tooltip id="button-tooltip" {...props}>
+            Iniciar chat con el bot
+        </Tooltip>
+    );
 
     return (
         <div id="Fondo">
+            <OverlayTrigger placement="left" delay={{ show: 250, hide: 400 }}  overlay={renderTooltip}>
+                <Button id="btnchat" href="/chat"  variant="dark"><i class="fa-solid fa-robot fa-2xl fa-beat "></i></Button>
+            </OverlayTrigger>
             <BarraNavegacion user={usernamelog} />
             <div id="Head">
                 <center><b>Bienvenido</b>

@@ -1,4 +1,4 @@
-## Seminario 1 -  Practica1
+## Seminario 1 -  Proyecto HolaGuate
 #### Grupo13
 
 ### Integrantes
@@ -11,15 +11,21 @@
 | 4 | Hector Josue Orozco Salazar                 | 201314296 |
 
 ## Link de la pagina
+http://seminario1g13.tk/
+
+# DESCRIPCION
+Esta aplicacion esta dirigida para pequenas y medianas empresas, el objetivo principal es que se puedan dar a conocer, tanto los servicios que ofrecen como una ubicacion. Tomando como inspiracion las paginas de instagram y facebook en las cuales estas empresas pueden darse a conocer ante las personas. El cliente podra ingresar la informacion de su empresa en su idioma original ya que muchos duenos de empresas son de diferentes paises, y con el servicio de Translate puede el cliente verlo en maximo 3 idiomas diferentes.
+
 
 
 # Arquitectura
 
-<img src="images/arquitectura.png">
+<img src="IMG/arquitectura.png">
 
  
 * EC2
-    <br>Fueron utilizadas para realizar los servidores del backend, en los cuales uno fue implementado en NodeJS y el otro en python.   
+    <br>Fueron utilizadas para realizar los servidores del backend, en los cuales uno fue implementado en NodeJS y el otro en python. 
+
 * Bucket Imagenes
     <br>Bucket es el contenedor que Amazon S3 nos proporciona para el almacenamiento de objetos
     tales como archivos y metadatos 
@@ -44,32 +50,39 @@
 * Amazon lex
     <br>Tecnologia de vz y audio de compresion de lenguaje natrual(NLU), dicha tecnologia es implementada en el chatbot personalizado que cuenta la aplicacion para poder ayudar a los usuario con ayudas rapidas
 
+* AWS Lambda
+    <br>AWS Lambda es un servicio informático sin servidor que ejecuta código como respuesta a eventos y administra automáticamente los recursos informáticos subyacentes. Estos eventos pueden ser cambios de estado o una actualización, como que un usuario coloque un artículo en un carrito de la compra en un sitio web de comercio electrónico.
+
+* Load Balancer
+    <br>Elastic Load Balancing distribuye automáticamente su tráfico entrante entre varios destinos, como instancias EC2, contenedores y direcciones IP, en una o más zonas de disponibilidad. Supervisa el estado de sus objetivos registrados y enruta el tráfico solo a los objetivos en buen estado. Elastic Load Balancing escala su balanceador de carga a medida que su tráfico entrante cambia con el tiempo. 
+
+
 # Usuarios IAM
 * Usuario S3
 Se creo un usuario con permisos de acceso a S3 para la gestion del Bucket en donde se encuentran las imagenes y paginas web, perteneciente al gurpo practica1-G13-S3.
 El permiso utilizado para este usuario es: AmazonS3FullAcces
-<img src="images/IAM1Imagenes.png">
+<img src="IMG/IAM1Imagenes.png">
 
 * Usuario ec2
 Se creo un usuario con permisos de acceso a ec2 con la cual se gestiono cada una de las vpc en las que se encuentran alojando los servidores de nodejs y python correspondientes, perteneciente al gurpo practica1-G13-S3.
 El permiso utilizado para este usuario es: AmazonEC2FullAcces
-<img src="images/IAM2Imagenes.png">
+<img src="IMG/IAM2Imagenes.png">
 
 * Usuario AmazonLexFullAccess
 Se realizacio la creacion deun usuario con permisos para amazonlex  el cual tiene la funcionalidad poder dar conexion a los servicio del chatbot.
 El permiso utilizado para este usuario es: AmazonLexFullAccess
-<img src="images/amazonlex.png'>
+<img src="IMG/amazonlex.png'>
 
 
 # Bucket S3
 
-<img src="images/bucketImagenes.png">
+<img src="IMG/bucketImagenes.png">
 
 # EC2
 * Instancia utilizada para montaje del servidor de nodejs.
-<img src="images/ec2nodejs.png">
+<img src="IMG/ec2nodejs.png">
 * Instancia utilizada para montaje del servidor de python.
-<img src="images/ec2python.png">
+<img src="IMG/ec2python.png">
 
 # RDS
 Se creo un usuario con permisos de acceso a la base de datos relacional utilizando la base de datos de SQLserver, perteneciente al gurpo practica1-G13-S3.
@@ -80,20 +93,19 @@ El permiso utilizado para este usuario es: AmazonRDSFullAccess
 # Aplicacion Web
 
 * Login
-    <img src="images/login.png">
+    <img src="IMG/login.jpg">
+
 * Login camara
-    <imag src="images/">
-* Registro
-    <img src="images/registro.png">
-* Pantalla Inicio
-    <img src="images/inicio.png">
-* Editar Perfil
-    <img src="images/editarPerfil.png">
-* Subir Foto
-    <img src="images/subirFoto.png">
-* Ver Fotos
-    <img src="images/verFotos.png">
-* Extrer texto y Traduccir
-    <img src="images/">
-* Chatbot
-    <img src="images">
+    <imag src="IMG/camara.jpg">
+
+* home
+    <imag src="IMG/home.jpg">
+
+* favoritos
+    <imag src="IMG/favoritos.jpg">
+
+* crear
+    <imag src="IMG/crear.jpg">
+
+* chatBot
+    <imag src="IMG/chat.jpg">

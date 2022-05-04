@@ -87,8 +87,6 @@ El permiso utilizado para este usuario es: AmazonLexFullAccess
 # RDS
 Se creo un usuario con permisos de acceso a la base de datos relacional utilizando la base de datos de SQLserver, perteneciente al gurpo practica1-G13-S3.
 El permiso utilizado para este usuario es: AmazonRDSFullAccess
-<img src="images/rdsImagenes.png">
-<img src="images/ER.png">
 
 # Aplicacion Web
 
@@ -96,16 +94,16 @@ El permiso utilizado para este usuario es: AmazonRDSFullAccess
     <img src="IMG/login.jpg">
 
 * Login camara
-    <imag src="IMG/camara.jpg">
+    <img src="IMG/camara.jpg">
 
 * home
-    <imag src="IMG/home.jpg">
+    <img src="IMG/home.jpg">
 
 * favoritos
-    <imag src="IMG/favoritos.jpg">
+    <img src="IMG/favoritos.jpg">
 
 * crear
-    <imag src="IMG/crear.jpg">
+    <img src="IMG/crear.jpg">
 
 * chatBot
-    <imag src="IMG/chat.jpg">
+    <img src="IMG/chat.jpg">
